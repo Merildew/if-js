@@ -1,0 +1,31 @@
+{
+  "name": "if-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Merildew/if-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Merildew/if-js/issues"
+  },
+  "homepage": "https://github.com/Merildew/if-js#readme",
+  "dependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.38.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
