@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-undef
 module.exports = {
     "env": {
         "browser": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "google"],
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
