@@ -3,8 +3,9 @@ const enter = prompt('Enter your palindrome');
 
 // 1 variant
 function palindrome(world) {
-  return world==world.split('').reverse().join('');
+  return world === world.split('').reverse().join('');
 }
+
 console.log('is palindrome 1', palindrome(enter));
 
 // 2 variant
@@ -20,19 +21,19 @@ function palindrome2(world) {
 console.log('is palindrome 2', palindrome2(enter));
 
 //  Функция min(a, b) и функция max(a,b)
-let a; let b;
-a = validation(a);
-b = validation(b);
+
+const a = validation();
+const b = validation();
 const min = (a, b) => Number(a)>Number(b) ? b : a;
 const max = (a, b) => Number(a)<Number(b) ? b : a;
 console.log(`Min from ${a} and ${b} is ${min(a, b)}`);
 console.log(`Max from ${a} and ${b} is ${max(a, b)}`);
 
-function validation(x) {
-  x = prompt(`Enter`);
+function validation() {
+  const x = prompt(`Enter`);
   if (isNaN(Number(x))) {
     alert('Enter the number');
-    return validation(x);
+    return validation();
   } else return x;
 }
 
