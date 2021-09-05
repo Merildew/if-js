@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint js/**/*.js"
+    "test": "eslint js/**/*.js",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --write --ignore-unknown", "eslint --cache --fix"]
   },
   "repository": {
     "type": "git",
@@ -18,14 +22,16 @@
   },
   "homepage": "https://github.com/Merildew/if-js#readme",
   "dependencies": {
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.38.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2"
   }
 }
