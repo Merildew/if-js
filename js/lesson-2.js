@@ -43,5 +43,3 @@ for (let x=0; x<arr1.length; x++) {
 }
 console.log(`>5 and <10 numbers: ${result1}`);
 console.log(`even numbers: ${result2}`);
-
-
