@@ -42,10 +42,3 @@ for (let x = 0; x < arr1.length; x++) {
 }
 console.log(`>5 and <10 numbers: ${result1}`);
 console.log(`even numbers: ${result2}`);
-
-const counter = [0, 0, 0];
-console.log(counter);
-
-counter[0] = 1;
-
-console.log(counter);
