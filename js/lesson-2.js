@@ -7,16 +7,16 @@ console.log(`User ${user}`);
 // Lera
 
 //  Работа с примитивами
-let test = 1;
-test++;
-test += "1";
-console.log(`Test ${test}`);
+let testValue = 1;
+testValue++;
+testValue += "1";
+console.log(`Test ${testValue}`);
 // 21, test - string
-test -= 1;
-console.log(`Test ${test}`);
+testValue -= 1;
+console.log(`Test ${testValue}`);
 // 20, test - number
-test = Boolean(test);
-console.log(`Test ${test}`);
+testValue = Boolean(testValue);
+console.log(`Test ${testValue}`);
 // true
 
 //   С помощью цикла for найдите произведение элементов массива.
@@ -42,3 +42,10 @@ for (let x = 0; x < arr1.length; x++) {
 }
 console.log(`>5 and <10 numbers: ${result1}`);
 console.log(`even numbers: ${result2}`);
+
+const counter = [0, 0, 0];
+console.log(counter);
+
+counter[0] = 1;
+
+console.log(counter);

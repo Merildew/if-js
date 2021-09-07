@@ -36,3 +36,6 @@ function changeColor(elem) {
     counter++;
   };
 }
+
+module.exports = changeColor;
+module.exports = sum;
