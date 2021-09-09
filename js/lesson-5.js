@@ -62,13 +62,10 @@ console.log(search(word));
 
 function search(target) {
   const result = [];
-  let counter = 0;
   for (let i = 0; i < data.length; i++) {
     const strData = Object.values(data[i]).join(" ").toLowerCase();
     if (strData.includes(target)) {
-      // can be written as a void function with console.log(data[i])
-      result[counter] = data[i];
-      counter++;
+      result.push(data[i]);
     }
   }
   if (result.length === 0) return "nothing was found";
