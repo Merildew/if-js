@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint js/**/*.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "testing": "jest"
   },
   "lint-staged": {
     "*.js": [
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/Merildew/if-js#readme",
   "dependencies": {
+    "jest": "^27.1.0",
     "prettier": "^2.3.2",
     "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
