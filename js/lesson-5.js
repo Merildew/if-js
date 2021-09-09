@@ -1,8 +1,8 @@
 // formatting date
 const date = "2020-11-26";
 
-function formatDate() {
-  let newDate = date.split("-");
+function formatDate(currentDate) {
+  let newDate = currentDate.split("-");
   const year = newDate[0];
   const month = newDate[1];
   const day = newDate[2];
@@ -58,14 +58,14 @@ const data = [
 ];
 
 const word = prompt("What are you looking for?").toLowerCase().trim();
-console.log(search());
+console.log(search(word));
 
-function search() {
+function search(target) {
   const result = [];
   let counter = 0;
   for (let i = 0; i < data.length; i++) {
     const strData = Object.values(data[i]).join(" ").toLowerCase();
-    if (strData.includes(word)) {
+    if (strData.includes(target)) {
       // can be written as a void function with console.log(data[i])
       result[counter] = data[i];
       counter++;
