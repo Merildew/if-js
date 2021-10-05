@@ -14,7 +14,6 @@ const colors = {
     }
     return {
       value: this.data[this.current++],
-      done: false,
     };
   },
 };
