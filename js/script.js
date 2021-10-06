@@ -92,4 +92,3 @@ function insertFunc(arr) {
 }
 
 insertFunc(data);
-console.log(data);
