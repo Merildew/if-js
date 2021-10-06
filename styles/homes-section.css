@@ -1,0 +1,166 @@
+.homes-section {
+  background-color: #EAF0F9;
+  text-align: center;
+  padding: 120px 104px 122px;
+  position: relative;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.homes-panel {
+  margin-top: 106px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.homes-item {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.homes-place {
+  color: #BFBFBF;
+  font-size: 20px;
+  margin-top: 24px;
+  line-height: 28px;
+}
+
+.homes-link {
+  color: #3077C6;
+  text-decoration: none;
+  margin-top: 24px;
+}
+
+.slick-prev {
+  background: url("../assets/img/sprites.svg#arrow") no-repeat;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  z-index: 1;
+  transform: scale(-1, 1);
+  font-size: 0;
+  border: none;
+}
+
+.slick-next {
+  background: url("../assets/img/sprites.svg#arrow") no-repeat;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  z-index: 1;
+  font-size: 0;
+  border: none;
+}
+
+@media (max-width: 1280px) {
+  .homes-section {
+    padding-right: 73px;
+    padding-left: 73px;
+  }
+
+  .slick-prev {
+    left: 55px;
+  }
+
+  .slick-next {
+    right: 55px;
+  }
+
+  .homes-link {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .homes-place {
+    margin: 8px 0 0;
+    font-size: 20px;
+  }
+}
+@media (max-width: 840px) {
+  .homes-link, .homes-place {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .homes-section {
+    padding: 51px 73px;
+  }
+
+  .homes-panel {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 680px) {
+  .homes-section {
+    padding: 40px 20px;
+  }
+
+  .homes-link {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+
+  .homes-place {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .slick-prev {
+    left: 4px;
+  }
+
+  .slick-next {
+    right: 4px;
+  }
+}
+@media (max-width: 425px) {
+  .homes-section {
+    padding: 40px 15px;
+  }
+
+  .homes-panel {
+    margin-top: 32px;
+  }
+
+  .homes-title {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .homes-link {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 8px;
+  }
+
+  .homes-place {
+    margin: 4px 0 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .slick-prev {
+    width: 28px;
+    height: 28px;
+  }
+
+  .slick-next {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/*# sourceMappingURL=homes-section.css.map */
