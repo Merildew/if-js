@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../assets/fonts/roboto-v27-latin-regular.woff2") format("woff2"), url("../assets/fonts/roboto-v27-latin-regular.woff") format("woff");
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../assets/fonts/roboto-v27-latin-500.woff2") format("woff2"), url("../assets/fonts/roboto-v27-latin-500.woff") format("woff");
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/open-sans-v23-latin-regular.eot");
+  src: local(""), url("../assets/fonts/open-sans-v23-latin-regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/open-sans-v23-latin-regular.woff2") format("woff2"), url("../assets/fonts/open-sans-v23-latin-regular.woff") format("woff"), url("../assets/fonts/open-sans-v23-latin-regular.ttf") format("truetype"), url("../assets/fonts/open-sans-v23-latin-regular.svg#OpenSans") format("svg");
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/open-sans-v23-latin-600.eot");
+  src: local(""), url("../assets/fonts/open-sans-v23-latin-600.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/open-sans-v23-latin-600.woff2") format("woff2"), url("../assets/fonts/open-sans-v23-latin-600.woff") format("woff"), url("../assets/fonts/open-sans-v23-latin-600.ttf") format("truetype"), url("../assets/fonts/open-sans-v23-latin-600.svg#OpenSans") format("svg");
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  color: #383838;
+  position: relative;
+}
+
+@media (max-width: 1440px), (min-width: 1440px) {
+  .wrapper {
+    max-width: 1440px;
+  }
+}
+@media (max-width: 1280px) {
+  .wrapper {
+    max-width: 1280px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

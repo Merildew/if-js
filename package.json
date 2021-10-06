@@ -14,6 +14,7 @@
       "eslint --cache --fix"
     ]
   },
+  "eslintIgnore": ["js/slick.min.js"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Merildew/if-js.git"
@@ -27,10 +28,11 @@
   "homepage": "https://github.com/Merildew/if-js#readme",
   "dependencies": {
     "jest": "^27.1.0",
+    "jquery": "^3.6.0",
     "prettier": "^2.3.2",
     "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.38.1"
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
