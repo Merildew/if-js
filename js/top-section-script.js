@@ -1,12 +1,12 @@
-const filterBtn = document.getElementById("filter-button");
-const filterElem = document.getElementById("filter");
+const filterButton = document.getElementById("filter-button");
+const filter = document.getElementById("filter");
 
-filterBtn.onclick = function () {
-  filterElem.classList.toggle("display");
+filterButton.onclick = function () {
+  filter.classList.toggle("display");
 };
 
-const filterItem = document.getElementsByClassName("filter-counter");
-for (const elem of filterItem) {
+const filterCounters = document.getElementsByClassName("filter-counter");
+for (const elem of filterCounters) {
   elem.firstElementChild.hidden = true;
 }
 
@@ -37,13 +37,11 @@ function removeChildren() {
 }
 
 function addChildren() {
-  const childrenValue = document.getElementById("childrenValue");
-  if (childrenValue.innerHTML > 0) {
-    ageSelector.style.display = "flex";
-    const selectOptions = document.createElement("select");
-    selectOptions.classList.add("year-selector");
-    selectOptions.setAttribute("name", "year-selector");
-    selectOptions.innerHTML = `<select>
+  ageSelector.style.display = "flex";
+  const selectOptions = document.createElement("select");
+  selectOptions.classList.add("year-selector");
+  selectOptions.setAttribute("name", "year-selector");
+  selectOptions.innerHTML = `<select>
                   <option>Infant</option>
                   <option>1 years old</option>
                   <option>2 years old</option>
@@ -63,8 +61,7 @@ function addChildren() {
                   <option>16 years old</option>
                   <option>17 years old</option>
                 </select>`;
-    ageSelector.append(selectOptions);
-  }
+  ageSelector.append(selectOptions);
 }
 
 function reduceValue() {
@@ -120,7 +117,7 @@ function displayVisitors() {
     rooms = roomsInput.getAttribute("value");
   else rooms = 0;
 
-  filterBtn.setAttribute(
+  filterButton.setAttribute(
     "value",
     `${adults} Adults — ${children} Children — ${rooms} Rooms `
   );
