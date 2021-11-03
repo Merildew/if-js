@@ -72,6 +72,7 @@ async function fillSlider() {
     await $.ajax("https://fe-student-api.herokuapp.com/api/hotels/popular", {
       success: function (data) {
         sessionStorage.setItem("hotels", JSON.stringify(data));
+        insertFunc(data);
       },
     });
   }
