@@ -1,15 +1,21 @@
 const homesInfoPanel = document.querySelector(".homes-panel");
 
-fillSlider();
+fillSlider().catch(() => {
+  alert("Oops! Something went wrong. Please try again later.");
+});
 
-function fillSlider() {
-  fetch("https://fe-student-api.herokuapp.com/api/hotels/popular")
-    .then((response) =>
-      response.json().then((hotelArr) => {
-        insertFunc(hotelArr);
-      })
-    )
-    .then(() => $(document).ready(slickSlider));
+async function fillSlider() {
+  if (sessionStorage.getItem("hotels")) {
+    const dataRequest = sessionStorage.getItem("hotels");
+    insertFunc(JSON.parse(dataRequest));
+  } else {
+    await $.ajax("https://fe-student-api.herokuapp.com/api/hotels/popular", {
+      success: function (data) {
+        sessionStorage.setItem("hotels", JSON.stringify(data));
+      },
+    });
+  }
+  $(document).ready(slickSlider);
 }
 
 function insertFunc(arr) {
