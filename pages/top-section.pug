@@ -1,0 +1,50 @@
+section.top-section
+    header
+        a.main-logo-link(href="index.html")
+        .header-content
+            a.header-link(href="#") Stays
+            a.header-link(href="#") Attractions
+            a.header-icon.night-icon(href="#")
+            a.header-icon.account-icon(href="#")
+            a.header-icon.menu-icon(href="#")
+    .top-panel
+        h1 Discover stay
+            br
+            | to live, work or just relax
+        .search-labels
+            label.town-label(for="town-search") Your destination or hotel name
+            label.date-label(for="date-search") Check-in — Check-out
+        form.search-panel(method="get" action="/" name="search-panel" id="searchPanel")
+            input.search-input.town-search#town-search(name="town" type="text" placeholder="Destination or hotel name")
+            input.search-input.date-search#date-search(name="date" type="date")
+            input.search-input.visitors-search#filter-button(type="button" name="visitors" value="Visitors")
+            .visitors-filter.display#filter
+                .visitors-item
+                    p Adults
+                    .filter-counter
+                        input#adultsInput(type="text" name="adults")
+                        input.count-button.reduce-button(type="button" value="-" id="reduceButton1" disabled="disabled")
+                        p(id="adultsValue") 0
+                        input.count-button.increase-button(type="button" value="+" id="increaseButton1")
+                .visitors-item
+                    p Children
+                    .filter-counter
+                        input#childrenInput(type="text" name="children")
+                        input.count-button.reduce-button(type="button" value="-" id="reduceButton2" disabled="disabled")
+                        p(id="childrenValue") 0
+                        input.count-button.increase-button(type="button" value="+" id="increaseButton2")
+                .visitors-item
+                    p Rooms
+                    .filter-counter
+                        input#roomsInput(type="text" name="rooms")
+                        input.count-button.reduce-button(type="button" value="-" id="reduceButton3" disabled="disabled")
+                        p(id="roomsValue") 0
+                        input.count-button.increase-button(type="button" value="+" id="increaseButton3")
+                .age-selector(id="age-selector")
+                    p.selector-text What is the age of the child you’re
+                        br
+                        | travelling with?
+            input.search-submit(type="submit" value="Search")
+        .apps-logo
+            a.google-download(href="https://play.google.com/store")
+            a.app-store-download(href="https://www.apple.com/app-store/")
