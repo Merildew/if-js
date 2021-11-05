@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Form Lesson-14
+        link(rel="stylesheet", href="formStyles.css")
+    body
+        .wrapper
+            h1 Working with files
+            form#form.form
+                input#fileInput.file-input(type="file" name="file" hidden="true")
+                #imgField.img-field
+                    p Click to add your image
+                .submit-wrapper
+                    button#submitButton(type="submit") Submit
+            script(src="formScript.js" )
+
