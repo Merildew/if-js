@@ -27,6 +27,10 @@
   src: url("../assets/fonts/open-sans-v23-latin-600.eot");
   src: local(""), url("../assets/fonts/open-sans-v23-latin-600.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/open-sans-v23-latin-600.woff2") format("woff2"), url("../assets/fonts/open-sans-v23-latin-600.woff") format("woff"), url("../assets/fonts/open-sans-v23-latin-600.ttf") format("truetype"), url("../assets/fonts/open-sans-v23-latin-600.svg#OpenSans") format("svg");
 }
+.display {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;

@@ -42,7 +42,6 @@ function addChildren() {
   selectOptions.classList.add("year-selector");
   selectOptions.setAttribute("name", "year-selector");
   selectOptions.innerHTML = `<select>
-                  <option>Infant</option>
                   <option>1 years old</option>
                   <option>2 years old</option>
                   <option>3 years old</option>
