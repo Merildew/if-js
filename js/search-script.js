@@ -1,23 +1,5 @@
-const townSearch = document.getElementById("town-search");
-const resultPanel = document.getElementById("resultPanel");
-const submitButton = document.getElementById("submitButton");
-const adults = document.getElementById("adultsValue");
-const rooms = document.getElementById("roomsValue");
-
-const buttonsForChildrenAndAdults = [
-  document.getElementById("reduceButton1"),
-  document.getElementById("reduceButton2"),
-  document.getElementById("increaseButton1"),
-  document.getElementById("increaseButton2"),
-];
-
-submitButton.addEventListener("click", searchRequest);
-
-for (const button of buttonsForChildrenAndAdults) {
-  button.addEventListener("click", searchDisable);
-}
-
 async function searchRequest() {
+  const resultPanel = document.getElementById("resultPanel");
   const lastChild = resultPanel.lastChild;
   if (lastChild.nodeName !== "H2") {
     lastChild.remove();
@@ -27,8 +9,6 @@ async function searchRequest() {
   hotelsPanel.classList.add("hotels-panel");
   resultPanel.append(hotelsPanel);
 
-  const adultsValue = adults.innerHTML;
-  const roomsValue = rooms.innerHTML;
   const yearSelector = document.getElementsByClassName("year-selector");
   const ageArray = [];
   for (const age of yearSelector) {
@@ -36,12 +16,14 @@ async function searchRequest() {
     ageArray.push(ageValue);
   }
 
-  const result = await getResponse(
-    townSearch.value,
-    adultsValue,
-    ageArray,
-    roomsValue
-  );
+  const searchValue = {
+    town: document.getElementById("town-search").value,
+    adults: document.getElementById("adultsValue").innerHTML,
+    year: ageArray,
+    rooms: document.getElementById("roomsValue").innerHTML,
+  };
+
+  const result = await getResponse(searchValue);
   if (result.length === 0) {
     insertNonResult(hotelsPanel);
   } else insertAvailable(result, hotelsPanel);
@@ -64,25 +46,16 @@ async function searchRequest() {
   document.getElementById("resultPanel").classList.remove("display");
 }
 
-async function getResponse(search, adults, children, rooms) {
+async function getResponse(searchValue) {
   try {
     const response = await fetch(
-      `https://fe-student-api.herokuapp.com/api/hotels?search=${search}&adults=${adults}&children=${children}&rooms=${rooms}`
+      `https://fe-student-api.herokuapp.com/api/hotels?search=${searchValue.town}&adults=${searchValue.adults}&children=${searchValue.year}&rooms=${searchValue.rooms}`
     );
     return await response.json();
   } catch (e) {
     // sad smile will become visible
     return [];
   }
-}
-
-function searchDisable() {
-  const adultsValue = adults.innerHTML;
-  const childrenValue = document.getElementById("childrenValue").innerHTML;
-
-  if (childrenValue > 0 && adultsValue === "0") {
-    submitButton.setAttribute("disabled", "disabled");
-  } else submitButton.removeAttribute("disabled");
 }
 
 function insertNonResult(panel) {
@@ -105,6 +78,16 @@ function insertAvailable(arr, panel) {
   });
 }
 
+function searchDisable() {
+  const adultsValue = document.getElementById("adultsValue").innerHTML;
+  const childrenValue = document.getElementById("childrenValue").innerHTML;
+  const submitButton = document.getElementById("submitButton");
+
+  if (childrenValue > 0 && adultsValue === "0") {
+    submitButton.setAttribute("disabled", "disabled");
+  } else submitButton.removeAttribute("disabled");
+}
+
 function slickSliderForSearch() {
   $(".hotels-panel").slick({
     slidesToShow: 4,
@@ -124,3 +107,5 @@ function slickSliderForSearch() {
     ],
   });
 }
+
+export { searchDisable, searchRequest };
