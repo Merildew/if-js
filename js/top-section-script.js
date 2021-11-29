@@ -1,33 +1,5 @@
-const filterButton = document.getElementById("filter-button");
-const filter = document.getElementById("filter");
-
-filterButton.onclick = function () {
-  filter.classList.toggle("display");
-};
-
-const filterCounters = document.getElementsByClassName("filter-counter");
-for (const elem of filterCounters) {
-  elem.firstElementChild.hidden = true;
-}
-
-const reduceButtons = document.getElementsByClassName("reduce-button");
-const increaseButtons = document.getElementsByClassName("increase-button");
-
-for (const btn of reduceButtons) {
-  btn.addEventListener("click", reduceValue);
-}
-for (const btn of increaseButtons) {
-  btn.addEventListener("click", increaseValue);
-}
-
-const childrenIncrease = document.getElementById("increaseButton2");
-const childrenReduce = document.getElementById("reduceButton2");
-const ageSelector = document.getElementById("age-selector");
-
-childrenIncrease.addEventListener("click", addChildren);
-childrenReduce.addEventListener("click", removeChildren);
-
 function removeChildren() {
+  const ageSelector = document.getElementById("age-selector");
   const childrenValue = document.getElementById("childrenValue");
   if (childrenValue.innerHTML === "0") {
     ageSelector.style.display = "none";
@@ -37,8 +9,9 @@ function removeChildren() {
 }
 
 function addChildren() {
-  ageSelector.style.display = "flex";
+  const ageSelector = document.getElementById("age-selector");
   const selectOptions = document.createElement("select");
+  ageSelector.style.display = "flex";
   selectOptions.classList.add("year-selector");
   selectOptions.setAttribute("name", "year-selector");
   selectOptions.innerHTML = `<select>
@@ -116,8 +89,11 @@ function displayVisitors() {
     rooms = roomsInput.getAttribute("value");
   else rooms = 0;
 
+  const filterButton = document.getElementById("filter-button");
   filterButton.setAttribute(
     "value",
     `${adults} Adults — ${children} Children — ${rooms} Rooms `
   );
 }
+
+export { reduceValue, increaseValue, addChildren, removeChildren };

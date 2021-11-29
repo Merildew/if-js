@@ -1,10 +1,4 @@
-const homesInfoPanel = document.querySelector(".homes-panel");
-
-fillSlider().catch(() => {
-  alert("Oops! Something went wrong. Please try again later.");
-});
-
-async function fillSlider() {
+async function fillHotels() {
   if (sessionStorage.getItem("hotels")) {
     const dataRequest = sessionStorage.getItem("hotels");
     insertFunc(JSON.parse(dataRequest));
@@ -27,6 +21,7 @@ function insertFunc(arr) {
       <img src="${item.imageUrl}" alt="${item.name}" class="homes-img">
       <a class="homes-link" href="#">${item.name}</a>
       <span class="homes-place">${item.city}, ${item.country}</span>`;
+    const homesInfoPanel = document.querySelector(".homes-panel");
     homesInfoPanel.append(homesItem);
   });
 }
@@ -50,3 +45,5 @@ function slickSlider() {
     ],
   });
 }
+
+export { fillHotels };
